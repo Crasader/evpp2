@@ -34,14 +34,14 @@ public:
 private:
 
     void post(int thread_index) {
-        pool_.GetNextLoop()->RunInLoop(
+        pool_.GetNextLoopWithHash(thread_index)->RunInLoop(
             [this, thread_index]() mutable {
             if (count_.fetch_add(1) == post_count_) {
                 stop();
                 return;
             } 
             
-            if (count_ < post_count_) {
+            if (count_ <= post_count_) {
                 if (thread_index % 2) {
                     thread_index -= 1;
                 } else {

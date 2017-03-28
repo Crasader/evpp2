@@ -24,6 +24,9 @@ target_link_libraries(benchmark_post_task4 ${LINKED_LIBRARIES})
 add_executable(benchmark_post_task5 post_task5.cc)
 target_link_libraries(benchmark_post_task5 ${LINKED_LIBRARIES})
 
+add_executable(benchmark_post_task6 post_task6.cc)
+target_link_libraries(benchmark_post_task6 ${LINKED_LIBRARIES})
+
 if (UNIX)
 	add_executable(benchmark_post_lockfree_task1 post_task1.cc)
 	target_link_libraries(benchmark_post_lockfree_task1 ${LINKED_LOCKFREE_LIBRARIES})
@@ -39,4 +42,7 @@ if (UNIX)
 
 	add_executable(benchmark_post_lockfree_task5 post_task5.cc)
 	target_link_libraries(benchmark_post_lockfree_task5 ${LINKED_LOCKFREE_LIBRARIES})
+	
+	add_executable(benchmark_post_lockfree_task6 post_task6.cc)
+	target_link_libraries(benchmark_post_lockfree_task6 ${LINKED_LOCKFREE_LIBRARIES})
 endif (UNIX)
